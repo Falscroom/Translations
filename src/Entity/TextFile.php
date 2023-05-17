@@ -14,6 +14,11 @@ class TextFile
     ) {
     }
 
+    public function __destruct()
+    {
+        fclose($this->handle);
+    }
+
     public static function createForReading(string $path): ?self
     {
         if ($handle = fopen($path, 'r')) {
