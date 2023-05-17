@@ -1,4 +1,4 @@
-It is required to have installed Docker to run application.
+Docker is required to run application.
 
 Install dependencies
 ```
