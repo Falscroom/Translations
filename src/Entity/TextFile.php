@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Translation\Entity;
 
-use Generator;
-
 class TextFile
 {
     private const NEW_FILE_POSTFIX = '-sorted.properties';
