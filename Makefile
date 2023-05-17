@@ -9,3 +9,6 @@ test:
 
 install:
 	@$(COMPOSER) install --working-dir=/opt/workdir
+
+sort:
+	@$(PHP) /opt/workdir/bin/console translations:sort /opt/workdir/data/translations.properties

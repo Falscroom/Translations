@@ -1,16 +1,28 @@
-Run container 
+It is required to have installed Docker to run application.
+
+Install dependencies
 ```
-docker compose up -d
+make install
 ```
 
-Exec sh 
+Run tests
 ```
-docker compose exec php sh
-```
-
-Run test
-```
-php bin/phpunit -c app
+make test
 ```
 
-How to run command? Docker is required.
+Run sorting command
+```
+make sort
+```
+
+**If you want to add file as argument or get access to symfony console.**
+
+Make console.sh executable
+```
+sudo chmod +x console.sh
+```
+
+Run console
+```
+./console.sh php /opt/workdir/bin/console
+```
