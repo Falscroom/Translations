@@ -11,7 +11,7 @@ use Translation\Factory\TranslationFactory;
 class TranslationParser
 {
     private const COMMENT_PREFIX = '#';
-    private const PATTERN = '/(?<key>.*?) ?= ?(?<value>.*)/i';
+    private const SEPARATOR_SYMBOL = '=';
 
     public static function isComment(string $line): bool
     {
@@ -20,10 +20,10 @@ class TranslationParser
 
     public function parseTranslation(string $line): ?Translation
     {
-        $matches = [];
+        $matches = explode(self::SEPARATOR_SYMBOL, $line);
 
-        if (preg_match(self::PATTERN, $line, $matches)) {
-            ['key' => $key, 'value' => $value] = $matches;
+        if (count($matches) === 2) {
+            [$key, $value] = $matches;
 
             return TranslationFactory::newTranslation($key, $value);
         }

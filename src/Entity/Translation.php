@@ -34,7 +34,6 @@ class Translation implements Stringable
             . $this->key
             . '='
             . $this->value
-            . PHP_EOL
         ;
     }
 }

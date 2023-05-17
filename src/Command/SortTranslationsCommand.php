@@ -43,6 +43,7 @@ class SortTranslationsCommand extends Command
         $newFile = TextFile::createForWriting($file);
         $this->service->saveTranslationsToFile($translations, $newFile);
 
+        $style->success('Done');
         return Command::SUCCESS;
     }
 }
