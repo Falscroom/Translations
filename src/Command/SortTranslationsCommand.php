@@ -40,7 +40,11 @@ class SortTranslationsCommand extends Command
         $translations = $this->service->parseTranslation($file);
         $this->service->sort($translations);
 
-        $newFile = TextFile::createForWriting($file);
+        if (!$newFile = TextFile::createForWriting($file)) {
+            $style->error('New file is not accessible, check permissions');
+            return Command::FAILURE;
+        }
+
         $this->service->saveTranslationsToFile($translations, $newFile);
 
         $style->success('Done');
