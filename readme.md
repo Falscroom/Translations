@@ -1,3 +1,5 @@
+This is test task, which sorts translations in translations.properties file.
+
 Docker is required to run application.
 
 Install dependencies
